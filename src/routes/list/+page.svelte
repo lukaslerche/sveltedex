@@ -3,7 +3,7 @@
 
 	export let data: PageData;
 
-	const list = data.list;
+	$: list = data.list;
 </script>
 
 <h1>List of Pokémon</h1>

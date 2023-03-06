@@ -3,7 +3,7 @@
 
 	export let data: PageData;
 
-	let p = data.pokemon;
+	$: p = data.pokemon;
 </script>
 
 <div>

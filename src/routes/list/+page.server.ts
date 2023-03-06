@@ -1,9 +1,7 @@
-import PokeAPI from 'pokedex-promise-v2';
+import P from '$lib/server/PokeAPI';
 import type { PageServerLoad } from './$types';
 
 export const load = (async () => {
-	const P = new PokeAPI(); // TODO does this cache if we create a new one every request?
-
 	const interval = {
 		limit: 151,
 		offset: 0
