@@ -1,0 +1,32 @@
+{
+	"actionButtons": {
+		"loadNpmCommands": false,
+		"commands": [
+			{
+				"name": "prepare",
+				"singleInstance": true,
+				"command": "pnpm i"
+			},
+			{
+				"name": "START DEV",
+				"singleInstance": true,
+				"command": "pnpm run dev"
+			},
+			{
+				"name": "1/3 run prettier",
+				"singleInstance": true,
+				"command": "pnpm run format"
+			},
+			{
+				"name": "2/3 check format & syntax",
+				"singleInstance": true,
+				"command": "pnpm run lint"
+			},
+			{
+				"name": "3/3 check Svelte errors",
+				"singleInstance": true,
+				"command": "pnpm run check"
+			}
+		]
+	}
+}
