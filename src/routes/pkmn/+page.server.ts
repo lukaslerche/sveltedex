@@ -19,7 +19,6 @@ export const load = (async () => {
 		);
 
 		//console.log(species);
-		
 
 		/*list.results.forEach(async (pokemon) => {
 			const pokemonDetail = await P.getPokemonByName(pokemon.name);
