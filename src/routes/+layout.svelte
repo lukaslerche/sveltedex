@@ -30,9 +30,26 @@
 	</div>
 	<div class="pokedexBot">
 		<div class="leftBottom">
-			<div class="">blue button</div>
-			<div class="">red green button</div>
-			<div class="">+ and box</div>
+			<div id="bigbluebutton" />
+			<div id="barbutton1" />
+			<div id="barbutton2" />
+			<div id="cross">
+				<div id="leftcross">
+					<div id="leftT" />
+				</div>
+				<div id="topcross">
+					<div id="upT" />
+				</div>
+				<div id="rightcross">
+					<div id="rightT" />
+				</div>
+				<div id="midcross">
+					<div id="midCircle" />
+				</div>
+				<div id="botcross">
+					<div id="downT" />
+				</div>
+			</div>
 		</div>
 		<div class="rightBottom">
 			<div class="">.. box</div>
