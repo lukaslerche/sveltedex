@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"modern-normalize": "^1.1.0",
 		"pokedex-promise-v2": "^4.1.0"
 	}
 }
