@@ -1,13 +1,10 @@
 <script lang="ts">
+	import { cap } from '$lib/strings';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
 	$: list = data.list;
-
-	function cap(str: string): string {
-		return str.charAt(0).toUpperCase() + str.slice(1);
-	}
 
 	function idFromUrl(url: string) {
 		const regex = /\/(\d+)\/$/;
