@@ -9,7 +9,8 @@
 
 <h1>No. {p.id} - {cap(p.name)}</h1>
 
-<img src={p.sprites.front_default} alt="sprite" />
+<div><img src={p.sprites.front_default} alt="sprite of {p.name}" />
+</div>
 
 <div class="nes-container with-title">
 	<p class="title">Info</p>
@@ -42,11 +43,15 @@
 	<p>TODO....</p>
 </div>
 
-<a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;- prev</a>
-<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">next -&gt;</a>
+<div><a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;- prev</a>
+	<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">next -&gt;</a>
+	</div>
 
 <style>
 	progress {
 		height: 20px;
+	}
+	div{
+		margin: 10px;
 	}
 </style>
