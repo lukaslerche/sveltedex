@@ -8,12 +8,18 @@ export const load = (async () => {
 		offset: 0
 	};
 
-	let list;
+	//let list;
+	let species;
 	try {
-		list = await P.getPokemonsList(interval);
+		//list = await P.getPokemonsList(interval);
+		species = await P.getPokemonSpeciesList(interval);
+
 		console.log(
-			`The result can serve ${list.count} pkmn, but i only requested an interval of ${list.results.length} pkmn`
+			`The result can serve ${species.count} pkmn, but i only requested an interval of ${species.results.length} pkmn`
 		);
+
+		//console.log(species);
+		
 
 		/*list.results.forEach(async (pokemon) => {
 			const pokemonDetail = await P.getPokemonByName(pokemon.name);
@@ -25,6 +31,6 @@ export const load = (async () => {
 	}
 
 	return {
-		list: list.results
+		species: species.results
 	};
 }) satisfies PageServerLoad;

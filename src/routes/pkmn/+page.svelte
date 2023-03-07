@@ -4,7 +4,7 @@
 
 	export let data: PageData;
 
-	$: list = data.list;
+	$: species = data.species;
 
 	function idFromUrl(url: string) {
 		const regex = /\/(\d+)\/$/;
@@ -15,7 +15,7 @@
 
 <h1>List of Pokémon</h1>
 <ul>
-	{#each list as p}
+	{#each species as p}
 		<li><a href="/pkmn/{idFromUrl(p.url)}">{idFromUrl(p.url)}: {cap(p.name)}</a></li>
 	{/each}
 </ul>
