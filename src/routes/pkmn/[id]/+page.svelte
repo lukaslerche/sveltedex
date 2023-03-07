@@ -5,7 +5,7 @@
 	export let data: PageData;
 
 	$: p = data.pokemon;
-	$: e = data.evolution;
+	$: e = data.nextEvolutions;
 </script>
 
 <h1>No. {p.id} - {cap(p.name)}</h1>
@@ -38,12 +38,14 @@
 	<p>TODO...</p>
 </div>
 
+{#if e.length > 0}
 <div class="nes-container with-title">
 	<p class="title">Evolution</p>
-	{#each e.chain.evolves_to as evo}
-		<p>{evo.species.name}</p>
+	{#each e as evo}
+		<p>{cap(evo.species.name)}</p>
 	{/each}
 </div>
+{/if}
 
 <div>
 	<a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;- prev</a>
