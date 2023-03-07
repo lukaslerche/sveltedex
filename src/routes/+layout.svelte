@@ -1,6 +1,6 @@
 <script lang="ts">
 	import 'modern-normalize';
-    import '$lib/pokedex.css';
+	import '$lib/pokedex.css';
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
@@ -25,9 +25,21 @@
 		<div class="block2 right" />
 		<div class="block3 right" />
 	</div>
-	<div class="content"><slot /></div>
-	<div class="pokedexBot left">Four</div>
-	<div class="pokedexBot right">Five</div>
+	<div class="content">
+		<slot />
+	</div>
+	<div class="pokedexBot">
+		<div class="leftBottom">
+			<div class="">blue button</div>
+			<div class="">red green button</div>
+			<div class="">+ and box</div>
+		</div>
+		<div class="rightBottom">
+			<div class="">.. box</div>
+			<div class="">blue boxes</div>
+			<div class="">- - box</div>
+		</div>
+	</div>
 </div>
 
 <style>
@@ -35,5 +47,4 @@
 		padding: 0;
 		margin: 0;
 	}
-	
 </style>
