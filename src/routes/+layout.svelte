@@ -1,5 +1,7 @@
 <script lang="ts">
 	import 'modern-normalize';
+	import '@16bits/nes.css/css/nes.min.css';
+	import '@fontsource/press-start-2p';
 	import '$lib/pokedex.css';
 </script>
 
@@ -90,8 +92,7 @@
 </div>
 
 <style>
-	* {
-		padding: 0;
-		margin: 0;
+	:global(body, code, html, kbd, pre, samp) {
+		font-family: 'Press Start 2P';
 	}
 </style>

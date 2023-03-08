@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@16bits/nes.css': ^2.3.2
+  '@fontsource/press-start-2p': ^4.5.11
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.5.0
   '@typescript-eslint/eslint-plugin': ^5.45.0
@@ -19,6 +21,8 @@ specifiers:
   vite: ^4.0.0
 
 dependencies:
+  '@16bits/nes.css': 2.3.2
+  '@fontsource/press-start-2p': 4.5.11
   modern-normalize: 1.1.0
   pokedex-promise-v2: 4.1.0
 
@@ -39,6 +43,11 @@ devDependencies:
   vite: 4.1.4
 
 packages:
+
+  /@16bits/nes.css/2.3.2:
+    resolution: {integrity: sha512-nEM5PIth+Bab5JSOa4uUR+PMNUsNTYxA55oVlG3gXI/4LoYtWS767Uv9Pu/KCbHXVvnIjt4ZXt13kZw3083qTw==}
+    engines: {node: '>=10.0.0'}
+    dev: false
 
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
@@ -259,6 +268,10 @@ packages:
     resolution: {integrity: sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@fontsource/press-start-2p/4.5.11:
+    resolution: {integrity: sha512-wICB8YPvoBi9Ok7s+CxAOljiQ6wqQN/UhrDrB63q9nudYDSOWmvrjFQaXSlj0AN16nAkDjZiaCz6dcKtR0kleg==}
+    dev: false
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
