@@ -6,6 +6,8 @@
 
 	$: p = data.pokemon;
 	$: e = data.nextEvolutions;
+	console.log(data.pokemon);
+	let imgUrl = p.sprites.other['official-artwork'].front_default;
 </script>
 
 <div>
@@ -16,18 +18,21 @@
 
 <h1>No. {p.id} - {cap(p.name)}</h1>
 
-<div><img src={p.sprites.front_default} alt="sprite of {p.name}" /></div>
+<div>
+	<!-- <div --background-image="url({imgUrl}})" /> -->
+	<img class='bw pokeImage' src={p.sprites.other['official-artwork'].front_default} alt="sprite of {p.name}" />
+</div>
 
 <div class="nes-container with-title">
 	<p class="title">Info</p>
 	<p>
 		Types:
-		{#each p.types as t}
-			{t.type.name}&nbsp;
+		{#each p.types as t, i}
+			{cap(t.type.name)}{#if i < p.types.length - 1},&nbsp;{/if}
 		{/each}
 	</p>
-	<p>Height: {p.height} inch</p>
-	<p>Weight: {p.weight} lb</p>
+	<p>Height: {p.height / 10} m</p>
+	<p>Weight: {p.weight / 10} kg</p>
 </div>
 
 <div class="nes-container with-title">
