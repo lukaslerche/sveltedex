@@ -23,7 +23,9 @@
 		<div class="block3 right" />
 	</div>
 	<div class="content">
-		<slot />
+		<div class="content-inner">
+			<slot />
+		</div>
 	</div>
 	<div class="pokedexBot">
 		<div class="leftBottom">

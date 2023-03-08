@@ -50,8 +50,8 @@
 	.icon {
 		width: 170px;
 		height: 130px;
-		background-color: lightgrey;
-		border-radius: 5%;
+		background-color: white;
+		border-radius: 5px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
