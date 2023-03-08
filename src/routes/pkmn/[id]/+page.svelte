@@ -10,6 +10,11 @@
 	let imgUrl = p.sprites.other['official-artwork'].front_default;
 </script>
 
+<div>
+	<a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;-</a>
+	<a href="/pkmn" type="button" class="nes-btn is-error">List</a>
+	<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">-&gt;</a>
+</div>
 
 <h1>No. {p.id} - {cap(p.name)}</h1>
 
@@ -52,11 +57,6 @@
 		{/each}
 	</div>
 {/if}
-
-<div>
-	<a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;- prev</a>
-	<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">next -&gt;</a>
-</div>
 
 <style>
 	progress {
