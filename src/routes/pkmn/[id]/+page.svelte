@@ -8,6 +8,12 @@
 	$: e = data.nextEvolutions;
 </script>
 
+<div>
+	<a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;-</a>
+	<a href="/pkmn" type="button" class="nes-btn is-error">List</a>
+	<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">-&gt;</a>
+</div>
+
 <h1>No. {p.id} - {cap(p.name)}</h1>
 
 <div><img src={p.sprites.front_default} alt="sprite of {p.name}" /></div>
@@ -46,11 +52,6 @@
 		{/each}
 	</div>
 {/if}
-
-<div>
-	<a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;- prev</a>
-	<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">next -&gt;</a>
-</div>
 
 <style>
 	progress {
