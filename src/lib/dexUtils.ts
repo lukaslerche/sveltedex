@@ -14,4 +14,15 @@ function getNextEvolutions(evoChain: Chain, ownName: string): ChainEvolvesTo[] {
 	return evoChain.evolves_to;
 }
 
-export { getNextEvolutions };
+function getEncounterAnimation(): string {
+	let encounterAnimation = "url('../mask-" + encoutnerAnimationTypes[getRandomInt(2)] + ".png')";
+	return encounterAnimation;
+}
+
+function getRandomInt(max: number): number {
+	return Math.floor(Math.random() * max);
+}
+
+const encoutnerAnimationTypes = ['horz-striped', 'single-circle'];
+
+export { getNextEvolutions, getEncounterAnimation };

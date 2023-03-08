@@ -1,13 +1,24 @@
 <script lang="ts">
 	import { cap } from '$lib/strings';
 	import type { PageData } from './$types';
+	import { afterUpdate } from 'svelte';
+	import { getEncounterAnimation } from '$lib/dexUtils';
 
 	export let data: PageData;
 
 	$: p = data.pokemon;
 	$: e = data.nextEvolutions;
 
-	let imgUrl = data.pokemon.sprites.other['official-artwork'].front_default;
+	let encounterAnimation: string;
+
+	afterUpdate(() => {
+		const maskedImage = document.querySelector('.colorImage');
+		encounterAnimation = getEncounterAnimation();
+		if (maskedImage) {
+			maskedImage.classList.remove('mask-animation');
+			setTimeout(() => maskedImage.classList.add('mask-animation'), 100);
+		}
+	});
 </script>
 
 <div>
@@ -18,8 +29,16 @@
 
 <h1>No. {p.id} - {cap(p.name)}</h1>
 
-<div class="mask-container" style="--test:url('{imgUrl}')">
-	<img class='bw pokeImage' src={p.sprites.other['official-artwork'].front_default} alt="sprite of {p.name}" />
+<div
+	class="mask-container"
+	style="--pokeImage:url('{p.sprites.other['official-artwork']
+		.front_default}'); --encounterAnimation:{encounterAnimation}"
+>
+	<img
+		class="bw pokeImage"
+		src={p.sprites.other['official-artwork'].front_default}
+		alt="sprite of {p.name}"
+	/>
 	<div class="colorImage mask-animation" />
 </div>
 

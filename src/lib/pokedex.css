@@ -665,7 +665,7 @@ div#yellowBox2 {
 }
 
 .bw.pokeImage {
-	filter: grayscale(100%);
+	filter: contrast(0); /*grayscale(100%);*/
 }
 
 .mask-container {
@@ -675,26 +675,25 @@ div#yellowBox2 {
 
 .mask-container div.colorImage {
 	position: absolute;
-	margin:0px;
+	margin: 0px;
 	inset: 0;
-	background-image: var(--test);
+	background-image: var(--pokeImage);
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	-webkit-mask-image: url('https://raw.githubusercontent.com/kevin-powell/fancy-mask-image-animation/master/public/mask-animation.png');
-	mask-image: url('https://raw.githubusercontent.com/kevin-powell/fancy-mask-image-animation/master/public/mask-animation.png');
+	-webkit-mask-image: var(--encounterAnimation);
 	-webkit-mask-size: cover;
-	mask-size: cover;
-	-webkit-mask-position: 100% 0%;
-	mask-position: 100% 0%;
 }
 
 .mask-animation {
-	animation: addColor 700ms steps(11) forwards;
+	animation: addColor 1000ms steps(9) forwards;
 }
 
 @keyframes addColor {
 	0% {
+		-webkit-mask-position: 0% 0%;
+	}
+	70% {
 		-webkit-mask-position: 0% 0%;
 	}
 	100% {
