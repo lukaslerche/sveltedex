@@ -31,8 +31,10 @@
 	<div class="pokedexBot">
 		<div class="leftBottom">
 			<div id="bigbluebutton" />
-			<div id="barbutton1" />
-			<div id="barbutton2" />
+			<div id="barbuttons">
+				<div id="barbutton1" />
+				<div id="barbutton2" />
+			</div>
 			<div id="cross">
 				<div id="leftcross">
 					<div id="leftT" />
@@ -52,9 +54,38 @@
 			</div>
 		</div>
 		<div class="rightBottom">
-			<div class="">.. box</div>
-			<div class="">blue boxes</div>
-			<div class="">- - box</div>
+			<div class="flexcol" id="rlcol">
+				<div class="flexrow">
+					<div id="miniButtonGlass4" />
+					<div id="miniButtonGlass5" />
+				</div>
+
+				<div id="yellowBox1" />
+			</div>
+			<div id="blueButtons">
+				<div id="blueButtons1">
+					<div class="blueButton" />
+					<div class="blueButton" />
+					<div class="blueButton" />
+					<div class="blueButton" />
+					<div class="blueButton" />
+				</div>
+				<div id="blueButtons2">
+					<div class="blueButton" />
+					<div class="blueButton" />
+					<div class="blueButton" />
+					<div class="blueButton" />
+					<div class="blueButton" />
+				</div>
+			</div>
+			<div class="flexcol rightjust" id="rrcol">
+				<div class="flexrow">
+					<div id="barbutton3" />
+					<div id="barbutton4" />
+				</div>
+
+				<div id="yellowBox2" />
+			</div>
 		</div>
 	</div>
 </div>
