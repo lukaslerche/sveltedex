@@ -310,6 +310,27 @@ div#topcross {
 	-o-border-top-right-radius: 5px;
 }
 
+.highlight,
+.highlight-low {
+	transition: filter 0.3s;
+}
+.highlight:is(:hover, :focus) {
+	filter: brightness(2.5);
+	transition: filter 0.3s;
+}
+.highlight:is(:active) {
+	filter: brightness(4);
+	transition: filter 0.3s;
+}
+.highlight-low:is(:hover, :focus) {
+	filter: brightness(1.5);
+	transition: filter 0.3s;
+}
+.highlight-low:is(:active) {
+	filter: brightness(2.5);
+	transition: filter 0.3s;
+}
+
 div#leftcross {
 	width: 30px;
 	height: 30px;

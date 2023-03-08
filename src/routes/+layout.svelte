@@ -1,17 +1,19 @@
 <script lang="ts">
 	import 'modern-normalize';
+	import '@16bits/nes.css/css/nes.min.css';
+	import '@fontsource/press-start-2p';
 	import '$lib/pokedex.css';
 </script>
 
 <div class="pokedexWrapper">
 	<div class="pokedexTop left">
 		<div id="top_left">
-			<div id="buttonGlass">
+			<div id="buttonGlass" class="highlight-low">
 				<div id="reflect" />
 			</div>
-			<div id="miniButtonGlass1" />
-			<div id="miniButtonGlass2" />
-			<div id="miniButtonGlass3" />
+			<div id="miniButtonGlass1" class="highlight-low" />
+			<div id="miniButtonGlass2" class="highlight-low" />
+			<div id="miniButtonGlass3" class="highlight-low" />
 		</div>
 		<div class="block1 left" />
 		<div class="block2 left" />
@@ -29,25 +31,25 @@
 	</div>
 	<div class="pokedexBot">
 		<div class="leftBottom">
-			<div id="bigbluebutton" />
+			<div id="bigbluebutton" class="highlight" />
 			<div id="barbuttons">
-				<div id="barbutton1" />
-				<div id="barbutton2" />
+				<div id="barbutton1" class="highlight" />
+				<div id="barbutton2" class="highlight" />
 			</div>
 			<div id="cross">
-				<div id="leftcross">
+				<div id="leftcross" class="highlight">
 					<div id="leftT" />
 				</div>
-				<div id="topcross">
+				<div id="topcross" class="highlight">
 					<div id="upT" />
 				</div>
-				<div id="rightcross">
+				<div id="rightcross" class="highlight">
 					<div id="rightT" />
 				</div>
 				<div id="midcross">
 					<div id="midCircle" />
 				</div>
-				<div id="botcross">
+				<div id="botcross" class="highlight">
 					<div id="downT" />
 				</div>
 			</div>
@@ -55,43 +57,42 @@
 		<div class="rightBottom">
 			<div class="flexcol" id="rlcol">
 				<div class="flexrow">
-					<div id="miniButtonGlass4" />
-					<div id="miniButtonGlass5" />
+					<div id="miniButtonGlass4" class="highlight" />
+					<div id="miniButtonGlass5" class="highlight" />
 				</div>
 
-				<div id="yellowBox1" />
+				<div id="yellowBox1" class="highlight-low" />
 			</div>
 			<div id="blueButtons">
 				<div id="blueButtons1">
-					<div class="blueButton" />
-					<div class="blueButton" />
-					<div class="blueButton" />
-					<div class="blueButton" />
-					<div class="blueButton" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
 				</div>
 				<div id="blueButtons2">
-					<div class="blueButton" />
-					<div class="blueButton" />
-					<div class="blueButton" />
-					<div class="blueButton" />
-					<div class="blueButton" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
+					<div class="blueButton highlight" />
 				</div>
 			</div>
 			<div class="flexcol rightjust" id="rrcol">
 				<div class="flexrow">
-					<div id="barbutton3" />
-					<div id="barbutton4" />
+					<div id="barbutton3" class="highlight" />
+					<div id="barbutton4" class="highlight" />
 				</div>
 
-				<div id="yellowBox2" />
+				<div id="yellowBox2" class="highlight-low" />
 			</div>
 		</div>
 	</div>
 </div>
 
 <style>
-	* {
-		padding: 0;
-		margin: 0;
+	:global(body, code, html, kbd, pre, samp) {
+		font-family: 'Press Start 2P';
 	}
 </style>
