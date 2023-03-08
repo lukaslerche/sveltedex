@@ -1,9 +1,6 @@
 <script lang="ts">
 	import 'modern-normalize';
 	import '$lib/pokedex.css';
-	import type { LayoutData } from './$types';
-
-	export let data: LayoutData;
 </script>
 
 <div class="pokedexWrapper">
