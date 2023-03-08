@@ -19,7 +19,7 @@ export const load = (async ({ params }) => {
 	}
 
 	let nextEvolutions = getNextEvolutions(evolution.chain, pokemon.name);
-	nextEvolutions = nextEvolutions.filter(nextEvolution => id(nextEvolution.species.url) <= 151);
+	nextEvolutions = nextEvolutions.filter((nextEvolution) => id(nextEvolution.species.url) <= 151);
 
-	return { pokemon, species, nextEvolutions};
+	return { pokemon, species, nextEvolutions };
 }) satisfies PageServerLoad;

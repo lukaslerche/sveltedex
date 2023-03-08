@@ -39,12 +39,12 @@
 </div>
 
 {#if e.length > 0}
-<div class="nes-container with-title">
-	<p class="title">Evolution</p>
-	{#each e as evo}
-		<p>{cap(evo.species.name)}</p>
-	{/each}
-</div>
+	<div class="nes-container with-title">
+		<p class="title">Evolution</p>
+		{#each e as evo}
+			<p>{cap(evo.species.name)}</p>
+		{/each}
+	</div>
 {/if}
 
 <div>
