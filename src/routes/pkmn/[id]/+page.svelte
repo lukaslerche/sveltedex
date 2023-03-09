@@ -63,11 +63,6 @@
 	{/each}
 </div>
 
-<div class="nes-container with-title">
-	<p class="title">Moves / Abilities</p>
-	<p>TODO...</p>
-</div>
-
 {#if e.length > 0}
 	<div class="nes-container with-title">
 		<p class="title">Evolution</p>

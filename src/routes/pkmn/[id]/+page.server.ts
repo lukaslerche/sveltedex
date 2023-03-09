@@ -6,7 +6,6 @@ import type PokeAPI from 'pokedex-promise-v2';
 import type { PageServerLoad } from './$types';
 
 export const load = (async ({ params }) => {
-	console.log(`Requesting pkmn no. ${params.id}`);
 	let pokemon: PokeAPI.Pokemon;
 	let species: PokeAPI.PokemonSpecies;
 	let evolution: PokeAPI.EvolutionChain;
