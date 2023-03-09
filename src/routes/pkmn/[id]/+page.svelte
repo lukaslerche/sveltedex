@@ -30,9 +30,7 @@
 	<a href="/pkmn" type="button" class="nes-btn is-error">List</a>
 	<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">-&gt;</a>
 </div>
-
 <h1>No. {p.id} - {cap(p.name)}</h1>
-
 <div
 	class="mask-container"
 	style="--pokeImage:url('{pokemonSprite}'); --encounterAnimation:{encounterAnimation}"
@@ -45,27 +43,26 @@
 	<div class="colorImage mask-animation" />
 </div>
 
-	<div class="nes-container with-title">
-		<p class="title">Info</p>
-		<p>
-			Types:
-			{#each p.types as t, i}
-				{cap(t.type.name)}{#if i < p.types.length - 1},&nbsp;{/if}
-			{/each}
-		</p>
-		<p>Height: {p.height / 10} m</p>
-		<p>Weight: {p.weight / 10} kg</p>
-	</div>
-
-	<div class="nes-container with-title">
-		<p class="title">Stats</p>
-		{#each p.stats as s}
-			<p>
-				{s.stat.name}: {s.base_stat} <progress class="nes-progress" value={s.base_stat} max="255" />
-			</p>
+<div class="nes-container with-title">
+	<p class="title">Info</p>
+	<p>
+		Types:
+		{#each p.types as t, i}
+			{cap(t.type.name)}{#if i < p.types.length - 1},&nbsp;{/if}
 		{/each}
-		<Stats stats={p.stats} />
-	</div>
+	</p>
+	<p>Height: {p.height / 10} m</p>
+	<p>Weight: {p.weight / 10} kg</p>
+</div>
+
+<div class="nes-container with-title">
+	<p class="title">Stats</p>
+	{#each p.stats as s}
+		<p>
+			{s.stat.name}: {s.base_stat} <progress class="nes-progress" value={s.base_stat} max="255" />
+		</p>
+	{/each}
+</div>
 
 {#if e.length > 0}
 	<div class="nes-container with-title">
@@ -90,14 +87,5 @@
 	}
 	div {
 		margin: 10px;
-	}
-
-	.nes-container {
-		max-width: 300px;
-	}
-
-	.containers {
-		display: flex;
-		flex-wrap: wrap;
 	}
 </style>
