@@ -30,49 +30,59 @@
 
 <h1>No. {p.id} - {cap(p.name)}</h1>
 
-<div
-	class="mask-container"
-	style="--pokeImage:url('{p.sprites.other['official-artwork']
-		.front_default}'); --encounterAnimation:{encounterAnimation}"
->
-	<img
-		class="bw pokeImage"
-		src={p.sprites.other['official-artwork'].front_default}
-		alt="sprite of {p.name}"
-	/>
-	<div class="colorImage mask-animation" />
-</div>
-
-<div class="nes-container with-title">
-	<p class="title">Info</p>
-	<p>
-		Types:
-		{#each p.types as t, i}
-			{cap(t.type.name)}{#if i < p.types.length - 1},&nbsp;{/if}
-		{/each}
-	</p>
-	<p>Height: {p.height / 10} m</p>
-	<p>Weight: {p.weight / 10} kg</p>
-</div>
-
-<div class="nes-container with-title">
-	<p class="title">Stats</p>
-	{#each p.stats as s}
-		<p>
-			{s.stat.name}: {s.base_stat} <progress class="nes-progress" value={s.base_stat} max="255" />
-		</p>
-	{/each}
-	<Stats stats={p.stats} />
-</div>
-
-{#if e.length > 0}
-	<div class="nes-container with-title">
-		<p class="title">Evolution</p>
-		{#each e as evo}
-			<p>{cap(evo.species.name)} <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id(evo.species.url) + ".png"} alt={"'Sprite of " + cap(evo.species.name) + "'"}/></p>
-		{/each}
+<div class="containers">
+	<div
+		class="mask-container"
+		style="--pokeImage:url('{p.sprites.other['official-artwork']
+			.front_default}'); --encounterAnimation:{encounterAnimation}"
+	>
+		<img
+			class="bw pokeImage"
+			src={p.sprites.other['official-artwork'].front_default}
+			alt="sprite of {p.name}"
+		/>
+		<div class="colorImage mask-animation" />
 	</div>
-{/if}
+
+	<div class="nes-container with-title">
+		<p class="title">Info</p>
+		<p>
+			Types:
+			{#each p.types as t, i}
+				{cap(t.type.name)}{#if i < p.types.length - 1},&nbsp;{/if}
+			{/each}
+		</p>
+		<p>Height: {p.height / 10} m</p>
+		<p>Weight: {p.weight / 10} kg</p>
+	</div>
+
+	<div class="nes-container with-title">
+		<p class="title">Stats</p>
+		{#each p.stats as s}
+			<p>
+				{s.stat.name}: {s.base_stat} <progress class="nes-progress" value={s.base_stat} max="255" />
+			</p>
+		{/each}
+		<Stats stats={p.stats} />
+	</div>
+
+	{#if e.length > 0}
+		<div class="nes-container with-title">
+			<p class="title">Evolution</p>
+			{#each e as evo}
+				<p>
+					{cap(evo.species.name)}
+					<img
+						src={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+							id(evo.species.url) +
+							'.png'}
+						alt={"'Sprite of " + cap(evo.species.name) + "'"}
+					/>
+				</p>
+			{/each}
+		</div>
+	{/if}
+</div>
 
 <style>
 	progress {
@@ -80,5 +90,14 @@
 	}
 	div {
 		margin: 10px;
+	}
+
+	.nes-container {
+		max-width: 300px;
+	}
+
+	.containers {
+		display: flex;
+		flex-wrap: wrap;
 	}
 </style>
