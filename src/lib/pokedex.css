@@ -686,7 +686,7 @@ div#yellowBox2 {
 }
 
 .bw.pokeImage {
-	filter: contrast(0); /*grayscale(100%);*/
+	filter: brightness(0%);
 }
 
 .mask-container {
