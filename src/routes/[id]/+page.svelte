@@ -12,8 +12,7 @@
 	$: e = data.nextEvolutions;
 	let encounterAnimation: string;
 	$: pokemonSprites = data.pokemon.sprites.other['official-artwork'] as OfficialArtworkNew;
-	let pokemonSprite: null | string;
-
+	let pokemonSprite = data.pokemon.sprites.other['official-artwork']['front_default'];
 	function updateCache(pokeType: string) {
 		if (pokeType == 'front_shiny') {
 			shinyCache.update((n) => {
