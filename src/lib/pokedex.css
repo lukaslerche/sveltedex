@@ -692,6 +692,7 @@ div#yellowBox2 {
 .mask-container {
 	position: relative;
 	max-width: max-content;
+	max-height: 475px;
 }
 
 .mask-container div.colorImage {
