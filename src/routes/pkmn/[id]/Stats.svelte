@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Radar } from 'svelte-chartjs';
+	import { Radar } from 'svelte-chartjs';
 	import {
 		Chart as ChartJS,
 		Title,
@@ -11,11 +11,10 @@
 	} from 'chart.js';
 	ChartJS.register(Title, Tooltip, Legend, PointElement, RadialLinearScale, LineElement);
 
-
-    export let pkmn;
+	export let pkmn;
 
 	$: statdata = {
-		labels: [ 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+		labels: ['Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
 		datasets: [
 			{
 				label: 'Stats',
@@ -31,4 +30,5 @@
 		]
 	};
 </script>
+
 <Radar data={statdata} />

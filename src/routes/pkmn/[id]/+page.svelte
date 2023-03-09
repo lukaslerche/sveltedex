@@ -2,19 +2,22 @@
 	import { cap, id } from '$lib/strings';
 	import type { PageData } from './$types';
 	import { afterUpdate } from 'svelte';
-	import { getEncounterAnimation } from '$lib/dexUtils';
+	import { getEncounterAnimation, isShiny } from '$lib/dexUtils';
 	import Stats from './Stats.svelte';
-	
+	import type { OfficialArtworkNew } from '$lib/better';
+
 	export let data: PageData;
 
 	$: p = data.pokemon;
 	$: e = data.nextEvolutions;
-
 	let encounterAnimation: string;
+	$: pokemonSprites = data.pokemon.sprites.other['official-artwork'] as OfficialArtworkNew;
+	let pokemonSprite: null | string;
 
 	afterUpdate(() => {
 		const maskedImage = document.querySelector('.colorImage');
 		encounterAnimation = getEncounterAnimation();
+		pokemonSprite = pokemonSprites[isShiny()];
 		if (maskedImage) {
 			maskedImage.classList.remove('mask-animation');
 			setTimeout(() => maskedImage.classList.add('mask-animation'), 100);
@@ -32,8 +35,7 @@
 
 <div
 	class="mask-container"
-	style="--pokeImage:url('{p.sprites.other['official-artwork']
-		.front_default}'); --encounterAnimation:{encounterAnimation}"
+	style="--pokeImage:url('{pokemonSprite}'); --encounterAnimation:{encounterAnimation}"
 >
 	<img
 		class="bw pokeImage"
@@ -69,7 +71,15 @@
 	<div class="nes-container with-title">
 		<p class="title">Evolution</p>
 		{#each e as evo}
-			<p>{cap(evo.species.name)} <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id(evo.species.url) + ".png"} alt={"'Sprite of " + cap(evo.species.name) + "'"}/></p>
+			<p>
+				{cap(evo.species.name)}
+				<img
+					src={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+						id(evo.species.url) +
+						'.png'}
+					alt={"'Sprite of " + cap(evo.species.name) + "'"}
+				/>
+			</p>
 		{/each}
 	</div>
 {/if}

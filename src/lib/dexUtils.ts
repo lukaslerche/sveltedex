@@ -20,4 +20,8 @@ function getRandomInt(max: number): number {
 
 const encoutnerAnimationTypes = [mask0, mask1];
 
-export { getNextEvolutions, getEncounterAnimation };
+function isShiny(): 'front_default' | 'front_shiny' {
+	return getRandomInt(100) ? 'front_default' : 'front_shiny';
+}
+
+export { getNextEvolutions, getEncounterAnimation, isShiny };
