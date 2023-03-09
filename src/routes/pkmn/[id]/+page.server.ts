@@ -6,9 +6,10 @@ import type PokeAPI from 'pokedex-promise-v2';
 import type { PageServerLoad } from './$types';
 
 export const load = (async ({ params }) => {
-	if (parseInt(params.id) > 151 || parseInt(params.id) < 1) {
-		throw error(404, 'Your Pokémon is in another castle!');
+	if (Number.isNaN(+params.id) || +params.id < 1 || +params.id > 151) {
+		throw error(404, 'Only 1-151 supported!');
 	}
+
 	let pokemon: PokeAPI.Pokemon;
 	let species: PokeAPI.PokemonSpecies;
 	let evolution: PokeAPI.EvolutionChain;
