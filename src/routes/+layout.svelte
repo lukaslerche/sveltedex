@@ -8,9 +8,11 @@
 <div class="pokedexWrapper">
 	<div class="pokedexTop left">
 		<div id="top_left">
-			<div id="buttonGlass" class="highlight-low">
-				<div id="reflect" />
-			</div>
+			<a href="/">
+				<div id="buttonGlass" class="highlight-low">
+					<div id="reflect" />
+				</div>
+			</a>
 			<div id="miniButtonGlass1" class="highlight-low" />
 			<div id="miniButtonGlass2" class="highlight-low" />
 			<div id="miniButtonGlass3" class="highlight-low" />
@@ -32,10 +34,14 @@
 	<div class="pokedexBot">
 		<div class="leftBottom">
 			<div id="bigbluebutton" class="highlight" />
-			<div id="barbuttons">
-				<div id="barbutton1" class="highlight" />
-				<div id="barbutton2" class="highlight" />
+			<div>
+				<div id="barbuttons">
+					<div id="barbutton1" class="highlight" />
+					<div id="barbutton2" class="highlight" />
+				</div>
+				<div id="about"><a href="/about">About</a></div>
 			</div>
+
 			<div id="cross">
 				<div id="leftcross" class="highlight">
 					<div id="leftT" />
@@ -94,5 +100,8 @@
 <style>
 	:global(body, code, html, kbd, pre, samp) {
 		font-family: 'Press Start 2P';
+	}
+	#about a {
+		color: #000;
 	}
 </style>
