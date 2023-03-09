@@ -3,8 +3,8 @@
 	import type { PageData } from './$types';
 	import { afterUpdate } from 'svelte';
 	import { getEncounterAnimation, isShiny } from '$lib/dexUtils';
-	import Stats from './Stats.svelte';
 	import type { OfficialArtworkNew } from '$lib/better';
+	import { shinyCache } from '$lib/stores';
 
 	export let data: PageData;
 
@@ -14,10 +14,22 @@
 	$: pokemonSprites = data.pokemon.sprites.other['official-artwork'] as OfficialArtworkNew;
 	let pokemonSprite: null | string;
 
+	function updateCache(pokeType: string) {
+		if (pokeType == 'front_shiny') {
+			shinyCache.update((n) => {
+				n[data.pokemonId] = true;
+				return n;
+			});
+			window.localStorage.setItem('pokeId', JSON.stringify($shinyCache));
+		}
+	}
+
 	afterUpdate(() => {
 		const maskedImage = document.querySelector('.colorImage');
 		encounterAnimation = getEncounterAnimation();
-		pokemonSprite = pokemonSprites[isShiny()];
+		let pokemonSpriteSuffix = isShiny($shinyCache[data.pokemonId]);
+		pokemonSprite = pokemonSprites[pokemonSpriteSuffix];
+		updateCache(pokemonSpriteSuffix);
 		if (maskedImage) {
 			maskedImage.classList.remove('mask-animation');
 			setTimeout(() => maskedImage.classList.add('mask-animation'), 100);

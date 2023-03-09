@@ -10,8 +10,7 @@ function getNextEvolutions(evoChain: Chain, ownName: string): ChainEvolvesTo[] {
 }
 
 function getEncounterAnimation(): string {
-	let encounterAnimation = "url('" + encoutnerAnimationTypes[getRandomInt(2)] + "')";
-	return encounterAnimation;
+	return "url('" + encoutnerAnimationTypes[getRandomInt(2)] + "')";
 }
 
 function getRandomInt(max: number): number {
@@ -20,7 +19,10 @@ function getRandomInt(max: number): number {
 
 const encoutnerAnimationTypes = [mask0, mask1];
 
-function isShiny(): 'front_default' | 'front_shiny' {
+function isShiny(cache: string): 'front_default' | 'front_shiny' {
+	if (cache) {
+		return 'front_shiny';
+	}
 	return getRandomInt(100) ? 'front_default' : 'front_shiny';
 }
 
