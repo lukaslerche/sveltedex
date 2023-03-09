@@ -26,9 +26,9 @@
 </script>
 
 <div>
-	<a href="/pkmn/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;-</a>
-	<a href="/pkmn" type="button" class="nes-btn is-error">List</a>
-	<a href="/pkmn/{p.id + 1}" type="button" class="nes-btn is-primary">-&gt;</a>
+	<a href="/{p.id - 1}" type="button" class="nes-btn is-primary">&lt;-</a>
+	<a href="/" type="button" class="nes-btn is-error">List</a>
+	<a href="/{p.id + 1}" type="button" class="nes-btn is-primary">-&gt;</a>
 </div>
 <h1>No. {p.id} - {cap(p.name)}</h1>
 <div

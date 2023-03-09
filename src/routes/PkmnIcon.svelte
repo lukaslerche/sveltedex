@@ -5,7 +5,7 @@
 	export let name: string;
 </script>
 
-<a href="/pkmn/{id(url)}" class="icon">
+<a href="/{id(url)}" class="icon">
 	<div class="row">
 		<span>{id(url)}.</span>
 		<img
