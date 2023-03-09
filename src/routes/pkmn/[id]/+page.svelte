@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cap } from '$lib/strings';
+	import { cap, id } from '$lib/strings';
 	import type { PageData } from './$types';
 	import { afterUpdate } from 'svelte';
 	import { getEncounterAnimation } from '$lib/dexUtils';
@@ -69,7 +69,7 @@
 	<div class="nes-container with-title">
 		<p class="title">Evolution</p>
 		{#each e as evo}
-			<p>{cap(evo.species.name)}</p>
+			<p>{cap(evo.species.name)} <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id(evo.species.url) + ".png"} alt={"'Sprite of " + cap(evo.species.name) + "'"}/></p>
 		{/each}
 	</div>
 {/if}
