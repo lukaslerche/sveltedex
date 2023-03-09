@@ -3,7 +3,8 @@
 	import type { PageData } from './$types';
 	import { afterUpdate } from 'svelte';
 	import { getEncounterAnimation } from '$lib/dexUtils';
-
+	import Stats from './Stats.svelte';
+	
 	export let data: PageData;
 
 	$: p = data.pokemon;
@@ -61,6 +62,7 @@
 			{s.stat.name}: {s.base_stat} <progress class="nes-progress" value={s.base_stat} max="255" />
 		</p>
 	{/each}
+	<Stats pkmn={p} />
 </div>
 
 {#if e.length > 0}
