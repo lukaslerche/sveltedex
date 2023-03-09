@@ -21,10 +21,10 @@
 				label: 'Stats',
 				data: stats.map((stat) => stat.base_stat),
 				fill: true,
-				backgroundColor: 'rgba(255, 99, 132, 1)',
+				backgroundColor: 'rgba(255, 99, 132, 0.2)',
 				borderColor: 'rgb(255, 99, 132)',
 				pointBackgroundColor: 'rgb(255, 99, 132)',
-				pointBorderColor: '#fff',
+				pointBorderColor: '#000',
 				pointHoverBackgroundColor: '#fff',
 				pointHoverBorderColor: 'rgb(255, 99, 132)'
 			}
@@ -32,4 +32,18 @@
 	};
 </script>
 
-<Radar data={statdata} />
+<Radar
+	data={statdata}
+	options={{
+		responsive: true,
+		scales: {
+			r: {
+				angleLines: {
+					display: true
+				},
+				suggestedMin: 0,
+				suggestedMax: 255
+			}
+		}
+	}}
+/>
