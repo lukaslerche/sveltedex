@@ -703,22 +703,31 @@ div#yellowBox2 {
 	background-repeat: no-repeat;
 	background-size: cover;
 
+	mask-image: var(--encounterAnimation);
 	-webkit-mask-image: var(--encounterAnimation);
+	mask-size: cover;
 	-webkit-mask-size: cover;
 }
 
 .mask-animation {
-	animation: addColor 1000ms steps(9) forwards;
+	/* animation: addColor 1000ms steps(9) forwards; */
+	animation-name: addColor;
+	animation-duration: 1000ms;
+	animation-timing-function: steps(9);
+	animation-fill-mode: forwards;
 }
 
 @keyframes addColor {
 	0% {
+		mask-position: 0% 0%;
 		-webkit-mask-position: 0% 0%;
 	}
 	70% {
+		mask-position: 0% 0%;
 		-webkit-mask-position: 0% 0%;
 	}
 	100% {
+		mask-position: 100% 0%;
 		-webkit-mask-position: 100% 0%;
 	}
 }
